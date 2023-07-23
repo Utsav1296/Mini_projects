@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   overflow: hidden;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   /* min-height: -webkit-fill-available; */
+   background-color: #bbb;
+   background: url('./images/mountain.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+body::before {
+   position: absolute;
+   content: '';
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: rgba(255, 255, 255, 0.6);
+}
+
+.container {
+   position: relative;
+}
+
+.card {
+   position: relative;
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   box-shadow: inset -25px -25px 40px rgba(117, 233, 229, 0.833);
+   background-image: url("./images/mountain.jpg");
+   background-position: center;
+   background-size: cover;
+   transition: 1s;
+   overflow: hidden;
+}
+
+@media only screen and (width> 540px) {
+   .card {
+      width: 400px;
+      height: 400px;
+   }
+}
+
+@media only screen and (width> 768px) {
+   .card {
+      width: 500px;
+      height: 500px;
+   }
+}
+
+.card:hover {
+   background: url("./images/majesticmountain.jpg");
+   background-position: center;
+   background-size: cover;
+}
+
+.card .cover {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   visibility: visible;
+   transition: 1s;
+   z-index: 10;
+   overflow: hidden;
+}
+
+.card::before {
+   position: absolutes;
+   content: "";
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(rgba(225, 225, 225, 0.3) 0%, rgba(225, 225, 225, 0.1) 15%, transparent 50%, transparent 85%, rgba(225, 225, 225, 0.3)) 100%;
+   border-radius: 50%;
+}
+
+.card::after {
+   content: "";
+   position: absolute;
+   bottom: -50px;
+   left: -90px;
+   height: 100px;
+   width: 700px;
+   border-radius: 50%;
+   background: radial-gradient(rgb(0, 0, 0), transparent, transparent);
+   z-index: -1;
+}
+
+.card .cover .imgBox {
+   position: absolute;
+   width: 40px;
+   height: 40px;
+   border: none;
+   border-radius: 50%;
+   opacity: 1;
+   visibility: visible;
+   transition: 1s;
+   z-index: 1;
+   background: transparent;
+   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.12), 25px 35px 20px rgba(0, 0, 0, 0.101), 25px 30px 30px rgba(0, 0, 0, 0.05), inset -20px -20px 25px rgba(255, 255, 255, 0.912), ;
+   animation: animate 10s linear infinite;
+   backdrop-filter: blur(4px);
+}
+
+.card .content {
+   position: absolute;
+   visibility: hidden;
+   transform: scale(0);
+   opacity: 0;
+   padding: 2vw;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   transition: 1s;
+   z-index: 10;
+}
+
+.card .content h2 {
+   font-size: 25px;
+   font-weight: 300;
+   color: rgb(255, 255, 255);
+   /* background-color: red; */
+   margin-bottom: 10px;
+}
+
+
+.card .content p {
+   text-align: center;
+}
+
+.card .content .btn {
+   text-decoration: none;
+   margin-top: 30px;
+   padding: 15px;
+   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.526), 25px 35px 20px rgba(0, 0, 0, 0.514), 25px 30px 30px rgba(0, 0, 0, 0.501), inset -20px -20px 25px rgba(255, 255, 255, 0.912), ;
+
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   border-radius: 50%;
+   /* background color is needed to see the change of border radius on hovering */
+   background: #97bbb052;
+   /* background-blend-mode: color-burn; */
+   backdrop-filter: blur(1px);
+   transition: ease-in-out 0.5s;
+}
+
+.card .content .btn ion-icon {
+   font-size: 30px;
+   color: wheat;
+   font-weight: 200;
+   transition: 0.5s;
+}
+
+.card .content .btn:hover {
+   border-radius: 30% 70% 70% 30% / 50% 50% 50% 50%;
+}
+
+.card .content .btn:hover ion-icon {
+   color: #ffffff;
+}
+
+.card .content .sci {
+   margin-top: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+}
+
+.card .content .sci a {
+   text-decoration: none;
+}
+
+.card .content .sci a ion-icon {
+   font-size: 30px;
+   color: #161816;
+   padding: 0 5px;
+   transition: 0.3s;
+}
+
+.card .content .sci a ion-icon:hover {
+   color: blanchedalmond;
+}
+
+.card:hover .cover .imgBox {
+   width: 1000px;
+   height: 1000px;
+   border-radius: 50%;
+   background: transparent;
+   backdrop-filter: blur(0px);
+}
+
+.card:hover .content {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(0.9);
+}
+
+@keyframes animate {
+
+   0%,
+   100% {
+      transform: translate(0, 0);
+   }
+
+   20% {
+      transform: translate(0, -100px);
+   }
+
+   40% {
+      transform: translate(100px, 0);
+   }
+
+   60% {
+      transform: translate(0px, 100px);
+   }
+
+   80% {
+      transform: translate(-100px, 0);
+   }
+}
+
+
+@media only screen and (width> 768px) {
+   @keyframes animate {
+
+      0%,
+      100% {
+         transform: translate(0, 0);
+      }
+
+      20% {
+         transform: translate(0, -200px);
+      }
+
+      40% {
+         transform: translate(200px, 0);
+      }
+
+      60% {
+         transform: translate(0px, 200px);
+      }
+
+      80% {
+         transform: translate(-200px, 0);
+      }
+   }
+}
