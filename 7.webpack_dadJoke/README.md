@@ -58,15 +58,12 @@ This project is a playful yet valuable learning experience, where we focus on ma
 [MIT](https://choosealicense.com/licenses/mit/)
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-
-
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Utsav1296/Mini_projects.git
 ```
 
 Go to the project directory
