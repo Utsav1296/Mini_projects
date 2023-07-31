@@ -1,0 +1,13 @@
+body {
+   display: flex;
+   padding: 2rem 5rem;
+   place-content: center;
+   background: #000;
+   word-wrap: break-word;
+}
+
+h1 {
+   color: white;
+   font-size: 5rem;
+   font-family: "Space Mono", monospace;
+}
