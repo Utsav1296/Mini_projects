@@ -18,6 +18,7 @@ document.querySelector("h1").onmouseover = event => {
 
       if (iterations > event.target.innerText.length) clearInterval(interval);
 
-      iterations += 1;
+      // three iterations per letter
+      iterations += 1 / 3;
    }, 50);
 }
