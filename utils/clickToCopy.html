@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Copy to Clipboard</title>
+</head>
+
+<body>
+   <input type="text" value="Text to copy" id="copyText">
+   <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+   <script>
+      function copyToClipboard() {
+         // Get the text to copy
+         var textToCopy = document.getElementById("copyText");
+
+         // Select the text
+         textToCopy.select();
+         textToCopy.setSelectionRange(0, 99999); // For mobile devices
+
+         // Copy the text to the clipboard
+         document.execCommand('copy');
+
+         // Deselect the text (optional)
+         textToCopy.blur();
+
+         // Inform the user that the text has been copied (optional)
+         alert("Copied to clipboard: " + textToCopy.value);
+      }
+   </script>
+</body>
+
+</html>
